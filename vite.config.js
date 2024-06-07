@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue'
 import ElementPlus from 'unplugin-element-plus/vite'
 // https://vitejs.dev/config/
 export default defineConfig({
-  publicPath: "/coze-chat/",
+  publicPath: '/coze-chat/',
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
