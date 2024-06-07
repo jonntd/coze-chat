@@ -1,0 +1,22 @@
+name: GitHub Actions Build and Deploy Demo
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install and Build 
+        run: |
+          npm install
+          npm run build
+      - name: Deploy
+        # JamesIves/github-pages-deploy-action@4.1.1 not need token
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: public
+
